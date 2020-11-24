@@ -7,7 +7,7 @@ jobs:
     - jdk: openjdk12
       services: ~
       script:
-          - ./refine ui_test
+          - ./refine ui_test $CYPRESS_PROJECT_ID $CYPRESS_RECORD_KEY
       before_script:
           - yarn -v
       before_install:
