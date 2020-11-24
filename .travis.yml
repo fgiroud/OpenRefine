@@ -4,10 +4,12 @@ dist: bionic
 
 jobs:
   include:
-    - jdk: openjdk13
+    - jdk: openjdk12
+      services: ~
       script:
-          - yarn -v
           - ./refine ui_test
+      before_script:
+          - yarn -v
       before_install:
           - cp packaging/travis_pom.xml packaging/pom.xml
           - mvn process-resources
