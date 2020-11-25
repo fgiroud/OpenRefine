@@ -949,8 +949,8 @@ case "$ACTION" in
   distclean) mvn distclean;;
   test) test $1;;  
   tests) test $1;;  
-  ui_test) ui_test $1;;  
-  ui_tests) ui_test $1;;  
+  ui_test) ui_test $1 $2;;  
+  ui_tests) ui_test $1 $2;;  
   server_test) server_test $1;;  
   server_tests) server_test $1;;  
   extensions_test) extensions_test $1;;
