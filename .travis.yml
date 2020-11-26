@@ -14,7 +14,7 @@ jobs:
           - mvn process-resources
           - nvm install 14
           - nvm use 14
-          - cd ./main/tests/cypress && npm install && cd ../../../
+          - cd ./main/tests/cypress && yarn install && cd ../../../
     # - dist: trusty # Fastest build first & for all builds
     #   jdk: oraclejdk8 # Trusty default
     # # Full matrix only for merges to master or anything to do with release branches e.g. v3.5
