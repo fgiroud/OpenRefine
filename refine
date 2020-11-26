@@ -508,7 +508,7 @@ ui_test() {
     echo ""
 
     echo "Starting Cypress..."
-    CYPRESS_RUN_CMD="yarn --cwd ./main/tests/cypress run cypress run --browser chromium --quiet --spec cypress/integration/project_management/list_projects.spec.js --reporter list --env OPENREFINE_URL=http://$REFINE_HOST:$REFINE_PORT"
+    CYPRESS_RUN_CMD="yarn --cwd ./main/tests/cypress run cypress run --browser chrome --quiet --reporter list --env OPENREFINE_URL=http://$REFINE_HOST:$REFINE_PORT"
     if [ "$CYPRESS_RECORD" = "1" ] ; then
         # if tests are recorded, project id is added to env vars, and --record flag is added to the cmd-line
         export CYPRESS_PROJECT_ID=$CYPRESS_PROJECT_ID
