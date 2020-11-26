@@ -519,7 +519,7 @@ ui_test() {
         export CYPRESS_PROJECT_ID=$CYPRESS_PROJECT_ID
         CYPRESS_RUN_CMD="$CYPRESS_RUN_CMD --record --key $CYPRESS_RECORD_KEY"
     fi
-
+    export MOZ_FORCE_DISABLE_E10S=1
     echo $CYPRESS_RUN_CMD
     $CYPRESS_RUN_CMD
 

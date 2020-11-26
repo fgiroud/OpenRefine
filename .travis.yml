@@ -5,7 +5,8 @@ dist: bionic
 jobs:
   include:
     - jdk: openjdk12
-      name: "UX Tests - Chrome" 
+      name: "UX Tests - Chrome"
+      stage: test
       services: ~
       script:
           - REFINE_MEMORY=4096 ./refine ui_test chrome $CYPRESS_PROJECT_ID $CYPRESS_RECORD_KEY
@@ -17,7 +18,8 @@ jobs:
           - nvm use 14
           - cd ./main/tests/cypress && yarn install && cd ../../../
     - jdk: openjdk12
-      name: "UX Tests - Firefox" 
+      name: "UX Tests - Firefox"
+      stage: test
       services: ~
       script:
           - REFINE_MEMORY=4096 ./refine ui_test firefox $CYPRESS_PROJECT_ID $CYPRESS_RECORD_KEY

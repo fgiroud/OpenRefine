@@ -3,9 +3,9 @@
 	"nodeVersion": "system",
 	"retries": {
 		"runMode": 1,
-		"openMode": 1
+		"openMode": 0
 	},
 	"env":{
-		"OPENREFINE_URL":"http://localhost:3333"
+		"OPENREFINE_URL":"http://127.0.0.1:3333"
 	}
 }
