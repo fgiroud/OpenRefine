@@ -113,6 +113,9 @@ Cypress.Commands.add('visitProject', (projectId) => {
 
 Cypress.Commands.add('loadAndVisitProject', (fixture, projectName = Date.now()) => {
 	cy.loadProject(fixture, projectName).then((projectId) => {
-		cy.visit(Cypress.env('OPENREFINE_URL') + '/project?project=' + projectId);
+		cy.wait(1000).then(()=>{
+			cy.visit(Cypress.env('OPENREFINE_URL') + '/project?project=' + projectId, {timeout: 10000, log:true});
+		})
+		
 	});
 });
