@@ -520,7 +520,7 @@ ui_test() {
     if [ "$CYPRESS_RECORD" = "1" ] ; then
         # if tests are recorded, project id is added to env vars, and --record flag is added to the cmd-line
         export CYPRESS_PROJECT_ID=$CYPRESS_PROJECT_ID
-        CYPRESS_RUN_CMD="$CYPRESS_RUN_CMD --record --key $CYPRESS_RECORD_KEY"
+        CYPRESS_RUN_CMD="$CYPRESS_RUN_CMD --record --key $CYPRESS_RECORD_KEY --tag=$BROWSER --group=$TRAVIS_BUILD_NUMBER"
     fi
     export MOZ_FORCE_DISABLE_E10S=1
     echo $CYPRESS_RUN_CMD
