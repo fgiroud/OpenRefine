@@ -499,7 +499,10 @@ ui_test() {
     REFINE_DATA_DIR="${TMPDIR:=/tmp}/openrefine-tests"
     
     add_option "-Drefine.headless=true"
-    add_option "-Drefine.verbosity=error"
+    add_option "-Drefine.autoreload=false"
+    add_option "-Dbutterfly.autoreload=false"
+    # add_option "-Drefine.verbosity=error"
+
     
     run fork > /dev/null
     
