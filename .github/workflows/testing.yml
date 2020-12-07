@@ -54,3 +54,9 @@ jobs:
               uses: actions/setup-java@v1
               with:
                   java-version: ${{ matrix.java }}
+
+            - name: Build and test with Maven
+              run: mvn process-resources
+
+            - name: Build and test with Cypress
+              run: REFINE_MEMORY=4096 ./refine ui_test chrome
