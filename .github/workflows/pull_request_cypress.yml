@@ -30,7 +30,7 @@ jobs:
               uses: canastro/copy-file-action@master
               with:
                 source: "packaging/test_pom.xml"
-                source: "packaging/pom.xml"
+                target: "packaging/pom.xml"
                 
             - name: Build with Maven
               run: mvn process-resources
