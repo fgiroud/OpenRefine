@@ -20,11 +20,18 @@ jobs:
                   key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
                   restore-keys: |
                       ${{ runner.os }}-maven-
+
             - name: Set up Java 8
               uses: actions/setup-java@v1
               with:
                   java-version: 8
 
+            - name: Prepare Maven Pom
+              uses: canastro/copy-file-action@master
+              with:
+                source: "packaging/test_pom.xml"
+                source: "packaging/pom.xml"
+                
             - name: Build with Maven
               run: mvn process-resources
 
