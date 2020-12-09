@@ -33,7 +33,7 @@ jobs:
                 target: "packaging/pom.xml"
                 
             - name: Build with Maven
-              run: mvn process-resources
+              run: mvn process-resources build
 
             - name: Restore Tests dependency cache
               uses: actions/cache@v2.1.3
