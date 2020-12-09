@@ -26,14 +26,14 @@ jobs:
               with:
                   java-version: 8
 
-            - name: Prepare Maven Pom
-              uses: canastro/copy-file-action@master
-              with:
-                source: "packaging/test_pom.xml"
-                target: "packaging/pom.xml"
+            # - name: Prepare Maven Pom
+            #   uses: canastro/copy-file-action@master
+            #   with:
+            #     source: "packaging/test_pom.xml"
+            #     target: "packaging/pom.xml"
                 
-            - name: Build with Maven
-              run: mvn process-resources build
+            # - name: Build with Maven
+            #   run: mvn process-resources build
 
             - name: Restore Tests dependency cache
               uses: actions/cache@v2.1.3
