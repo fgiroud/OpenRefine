@@ -43,4 +43,4 @@ jobs:
                   yarn install
 
             - name: Test with Cypress on ${{ matrix.browser }}
-              run: REFINE_MEMORY=4096M ./refine ui_test ${{ matrix.browser }} cn3r2t "${{ secrets.CYPRESS_RECORD_KEY }}"
+              run: REFINE_MEMORY=4096M /bin/bash ./refine ui_test ${{ matrix.browser }} cn3r2t "${{ secrets.CYPRESS_RECORD_KEY }}"
