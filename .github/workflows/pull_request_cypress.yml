@@ -26,6 +26,9 @@ jobs:
               with:
                   java-version: 8
 
+            - name: Build OpenRefine
+              run: ./refine build
+
             # - name: Prepare Maven Pom
             #   uses: canastro/copy-file-action@master
             #   with:
