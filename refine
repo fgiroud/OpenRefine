@@ -487,6 +487,10 @@ ui_test() {
     CYPRESS_RECORD_KEY="$3"
     CYPRESS_RECORD=0
 
+    echo "CYPRESS_PROJECT_ID $CYPRESS_PROJECT_ID"
+    echo "CYPRESS_RECORD_KEY $CYPRESS_RECORD_KEY"
+    
+
     if [ -z "$BROWSER" ] ; then
         BROWSER="electron"
     fi
