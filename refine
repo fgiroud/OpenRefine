@@ -793,7 +793,7 @@ if [ "$OS" = "windows" ] ; then
 fi
 
 # ----- Load configurations -------------------------------------
-
+echo "passing"
 if [ -f "refine-dev.ini" ]; then
   echo "Using refine-dev.ini for configuration"
   load_configs refine-dev.ini
@@ -825,7 +825,7 @@ fi
 checkJavaMajorVersion
 
 # ----- Parse the command line args ------------------------------------------
-
+echo "AARGS $@"
 while [ $# -ne 0 ] ; do
   case "$1" in
     -h) usage;;
@@ -881,7 +881,7 @@ if [ "$OS" = "macosx" ] ; then
 elif [ "$OS" = "linux" ] ; then
 	freeRam=$(free -m | grep -oP '\d+' | head -n 1)
 fi
-
+print "REFINE_MEMORY $REFINE_MEMORY"
 echo You have "$freeRam"M of free memory. 
 echo Your current configuration is set to use $REFINE_MEMORY of memory.
 echo OpenRefine can run better when given more memory. Read our FAQ on how to allocate more memory here:
