@@ -73,6 +73,26 @@ jobs:
     - name: Build and test with Maven
       run: mvn jacoco:prepare-agent test
 
+
+    - name: Restore Cypress Tests dependency cache
+      uses: actions/cache@v2.1.3
+      with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+              ${{ runner.os }}-yarn
+
+    - name: Install Cypress tests dependencies
+      run: |
+          cd ./main/tests/cypress
+          yarn install
+
+    - name: Test with Cypress on ${{ matrix.browser }}
+      run: | 
+        echo REFINE_MIN_MEMORY=1400M >> ./refine.ini
+        echo REFINE_MEMORY=4096M >> ./refine.ini
+        ./refine ui_test chrome cn3r2t "${{ secrets.CYPRESS_RECORD_KEY }}"
+
     - name: Submit test coverage to Coveralls
       run: |
         mvn prepare-package -DskipTests=true
