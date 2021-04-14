@@ -142,8 +142,8 @@ jobs:
         with:
           browser: chrome
           working-directory: ./main/tests/cypress
-          spec: |
-            cypress/integration/open-project/*.spec.js
+          # spec: |
+          #   cypress/integration/open-project/*.spec.js
           wait-on: 'http://localhost:3333'
           record: true
           parallel: true
