@@ -126,16 +126,17 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn
 
-      - name: Install test dependencies
-        run: |
-          cd ./main/tests/cypress
-          npm i -g yarn
-          yarn install
+      # - name: Install test dependencies
+      #   run: |
+      #     cd ./main/tests/cypress
+      #     npm i -g yarn
+      #     yarn install
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
           browser: chrome
+          project: ./main/tests/cypress
 
       # - name: Lint with ES-Lint & Prettier
       #   run: |
