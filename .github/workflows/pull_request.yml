@@ -109,6 +109,9 @@ jobs:
       - name: Build OpenRefine
         run: ./refine build
 
+      - name: Start OpenRefine
+        run: ./refine run_test
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
