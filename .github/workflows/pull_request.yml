@@ -84,7 +84,7 @@ jobs:
     strategy:
       # fail-fast: false
       matrix:
-        browser: ['chrome']
+        browser: ['chrome', 'firefox']
         machines: [1, 2, 3]
     runs-on: ubuntu-latest
 
