@@ -156,6 +156,7 @@ jobs:
             cypress/integration/open-project/*.spec.js
           wait-on: 'http://localhost:3333'
           record: true
+          group: ${{ matrix.browser }}
           parallel: true
           ci-build-id: '${{ github.sha }}-${{ github.workflow }}-${{ github.event_name }}'
         env:
