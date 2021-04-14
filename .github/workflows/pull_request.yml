@@ -82,8 +82,10 @@ jobs:
 
   ui_tests:
     strategy:
+      # fail-fast: false
       matrix:
         browser: ['chrome']
+        machines: [1, 2, 3]
     runs-on: ubuntu-latest
 
     steps:
