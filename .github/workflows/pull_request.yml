@@ -140,7 +140,7 @@ jobs:
         with:
           browser: chrome
           working-directory: ./main/tests/cypress
-          spec: cypress/integration/open_project.spec.js
+          spec: cypress/integration/open-project/open_project.spec.js
           wait-on: 'http://localhost:3333'
 
       # - name: Lint with ES-Lint & Prettier
