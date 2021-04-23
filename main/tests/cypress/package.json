@@ -10,7 +10,7 @@
         "fix-lint": "prettier --write . && eslint --fix .",
         "lint": "prettier --check . && eslint .",
         "cy:run": "cypress run", 
-        "cy:parallel" : "cypress-parallel -s cy:run -t 2 -d ./cypress/integration"
+        "cy:parallel" : "cypress-parallel -s cy:run -t 4 -d ./cypress/integration"
  
     },
     "dependencies": {
